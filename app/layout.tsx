@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className={`dark:bg-slate-900 dark:text-dark-text text-semidark bg-slate-200 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] ${poppins_init.variable}`}>{children}</body>
+    <html lang="es" className="dark">
+      <body className={`dark:bg-slate-900 dark:text-dark-text text-semidark bg-slate-200 bg-[linear-gradient(to_right,#DDD6FE_1px,transparent_1px),linear-gradient(to_bottom,#DDD6FE_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] ${poppins_init.variable}`}>{children}</body>
     </html>
   );
 }

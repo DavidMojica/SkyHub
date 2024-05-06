@@ -162,9 +162,7 @@
     -o-transition: var(--transition);
     transition: var(--transition);
   }
-  
-  /* actions */
-  
+
   .theme-switch__checkbox:checked + .theme-switch__container {
     background-color: var(--container-night-bg);
   }
