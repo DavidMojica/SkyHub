@@ -1,11 +1,12 @@
 'use client';
 import { useState } from 'react';
 import '../styles/switch_day.css';
-
 const Switch_day = ():React.JSX.Element => {
+
     const [isChecked, setIsChecked] = useState(true);
     const toggleDay = ():void =>{
         document.querySelector('html')?.classList.toggle('dark');
+        document.querySelector('.a-moonlight')?.classList.toggle('atropos');
         setIsChecked(!isChecked);
     }
 
