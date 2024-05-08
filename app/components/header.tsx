@@ -1,5 +1,7 @@
-import Switch_day from "./switch_day"
-import { FaGithub } from "react-icons/fa"
+import Switch_day from "./switch_day";
+import { FaGithub } from "react-icons/fa";
+import { Redirect } from "next";
+import Link from "next/link";
 
 const Header = ():React.JSX.Element =>{
     return(
@@ -13,7 +15,7 @@ const Header = ():React.JSX.Element =>{
             </section>
             <ul className="my-6 md:my-0 flex flex-col lg:flex-row text-center">
                 <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Planetas</a></li>
-                <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Exoplanetas</a></li>
+                <Link href={'./pages/exoplanetas'}><li className="mx-3.5"><p className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Exoplanetas</p></li></Link>
                 <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Estrellas</a></li>
                 <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Gráficos</a></li>
             </ul>

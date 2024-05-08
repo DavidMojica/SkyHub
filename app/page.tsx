@@ -23,9 +23,19 @@ const fetchNASAData = async () =>{
   }
 }
 
+const fetchCuriosity = async () =>{
+  try{
+    const response = await fetch(`${NASA_API.MARS_CURIOSITY}${NASA_API.KEY}`);
+    const data = await response.json();
+    console.log(data);
+  } catch (error){
+    console.log(error);
+  }
+}
+
 export default function Home() {
   useEffect(() => {
-    fetchNASAData();;
+    fetchNASAData();
   }, [])
 
   return (

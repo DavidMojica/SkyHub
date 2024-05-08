@@ -18,6 +18,10 @@ const config: Config = {
     fontFamily:{
       poppins: ['var(--font-poppins)']
     },
+    // colors:{
+    //   // Aqui van los colores
+      
+    // },
     
   },
   plugins: [],
