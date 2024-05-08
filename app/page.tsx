@@ -1,40 +1,27 @@
 'use client';
 import Header from "./components/header";
+import Footer from "./components/footer";
 import {MoonlightScene, ForestScene} from "./components/parallax/parallax-scenarios";
 import NASA_API from "./components/API/NASA_API";
 import React, {useEffect} from "react";
-
-interface NASAImageData {
-  title: string;
-  date: string;
-  hdurl: string;
-  explanation: string;
-  media_type: string;
-  url: string;
-}
 
 const fetchNASAData = async () =>{
   try{
     const response = await fetch(`${NASA_API.APOD}${NASA_API.KEY}`);
     const data = await response.json();
-    console.log('NASA APOD data', data)
-    displayData(data);
+    
+    document.getElementById('title')!.textContent = data.title;
+    document.getElementById('date')!.textContent = data.date;
+    document.getElementById('explanation')!.textContent = data.explanation;
+    const multimedia = document.querySelector('#c_multimedia');
+
+    if (multimedia) {
+      multimedia && (multimedia.innerHTML = data.media_type === 'video' ? `<iframe src="${data.url}"></iframe>` : `<img src="${data.url}" />`);
+    }
   } catch (error){
     console.log(error);
   }
 }
-
-const displayData = (data: NASAImageData): void => {
-  document.getElementById('title')!.textContent = data.title;
-  document.getElementById('date')!.textContent = data.date;
-  document.getElementById('explanation')!.textContent = data.explanation;
-  const multimedia = document.querySelector('#c_multimedia');
-
-  if (multimedia) {
-    multimedia && (multimedia.innerHTML = data.media_type === 'video' ? `<iframe src="${data.url}"></iframe>` : `<img src="${data.url}" />`);
-  }
-};
-
 
 export default function Home() {
   useEffect(() => {
@@ -58,13 +45,12 @@ export default function Home() {
         <p id="date"></p>
         <section className="picture-explanation-container">
           <section id="c_multimedia">
-
           </section>
-
-
           <p id="explanation"></p>
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }

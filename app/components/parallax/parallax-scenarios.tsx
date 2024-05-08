@@ -2,6 +2,7 @@
 import 'atropos/css';
 import Atropos from 'atropos';
 import { useEffect } from 'react';
+import { SiRocket } from 'react-icons/si';
 
 export const MoonlightScene = ():React.JSX.Element => {
     useEffect(() => {
@@ -19,7 +20,7 @@ export const MoonlightScene = ():React.JSX.Element => {
                         <img src="./parallax/moonlight-scene/night-moon.png" alt="moon" className="absolute object-cover mix-blend-screen" data-atropos-offset="-6.5" />
                         <img src="./parallax/moonlight-scene/night-mountains_behind.png" alt="mountains_behind" className="absolute object-cover" data-atropos-offset="-4" />           
                         <img src="./parallax/moonlight-scene/night-mountains_front.png" alt="mountains_front" className="absolute object-cover"  data-atropos-offset="0" />
-                        <a href="#section2" className="bg-purple-700 text-white rounded-full px-4 py-2 md:px-8 md:py-4 font-bold md:text-xl  hover:bg-opacity-70 duration-200 hidden md:inline-flex md:translate-y-64 lg:translate-y-72 xl:translate-y-96">Descubre más</a>
+                        <a href="#section2" className="bg-purple-700 text-white rounded-full px-4 py-2 md:px-8 md:py-4 font-bold md:text-xl  hover:bg-opacity-70 duration-200 hidden md:inline-flex md:translate-y-64 lg:translate-y-72 xl:translate-y-96">Empieza el viaje </a>
                     </article>
                 </article>
             </article>
@@ -46,7 +47,7 @@ export const ForestScene = ():React.JSX.Element =>{
                             <img src="./parallax/forest-scene/day-bird1.png" alt="bird1" className="absolute object-cover" data-atropos-offset="-5.5" />
                             <img src="./parallax/forest-scene/day-rocks.png" alt="rocks" className="absolute object-cover w-extra" data-atropos-offset="1.5" />
                             <img src="./parallax/forest-scene/day-water.png" alt="water"className="absolute object-cover" />
-                            <a href="#section2" className="bg-green-700 text-white rounded-full px-4 py-2 md:px-8 md:py-4 font-bold md:text-xl  hover:bg-opacity-70 duration-200 hidden md:inline-flex md:translate-y-60 lg:translate-y-72 xl:translate-y-96">Descubre más</a>
+                            <a href="#section2" className="bg-green-700 text-white rounded-full px-4 py-2 md:px-8 md:py-4 font-bold md:text-xl  hover:bg-opacity-70 duration-200 hidden md:inline-flex md:translate-y-60 lg:translate-y-72 xl:translate-y-96">Empieza el viaje</a>
                         </article>
                     </article>
                 </article>
