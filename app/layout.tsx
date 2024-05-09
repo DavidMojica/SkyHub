@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   description: "The land of the space",
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
