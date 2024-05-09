@@ -7,6 +7,7 @@ import React, {useEffect} from "react";
 
 const fetchNASAData = async () =>{
   try{
+    //-------APOD: Astronomic Picture Of the Day--------//
     const response = await fetch(`${NASA_API.APOD}${NASA_API.KEY}`);
     const data = await response.json();
     
@@ -23,24 +24,13 @@ const fetchNASAData = async () =>{
   }
 }
 
-const fetchCuriosity = async () =>{
-  try{
-    const response = await fetch(`${NASA_API.MARS_CURIOSITY}${NASA_API.KEY}`);
-    const data = await response.json();
-    console.log(data);
-  } catch (error){
-    console.log(error);
-  }
-}
-
-export default function Home() {
+const Home = () => {
   useEffect(() => {
     fetchNASAData();
   }, [])
-
   return (
     <>
-      <Header />
+    <Header />
       <section className="text-center mb-8 ">
           <span className="font-poppins font-bold text-6xl lg:text-8xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-sky-500 dark:from-pink-500 to-purple-800 dark:to-purple-800 shadow-around">
               SkyHub
@@ -64,3 +54,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

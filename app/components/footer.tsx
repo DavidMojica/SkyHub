@@ -1,3 +1,4 @@
+'use client';
 import { DiGithubFull } from "react-icons/di";
 const Footer = ():React.JSX.Element => {
     return (
@@ -8,6 +9,7 @@ const Footer = ():React.JSX.Element => {
                     <section>
                         <h4 className="text-2xl ">Explora nuestro sitio</h4>
                         <ul className="my-6 md:my-0 flex flex-col text-center">
+                            
                             <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Planetas</a></li>
                             <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Exoplanetas</a></li>
                             <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Estrellas</a></li>

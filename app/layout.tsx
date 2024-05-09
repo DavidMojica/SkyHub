@@ -9,9 +9,14 @@ const poppins_init = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "SkyHub | Home",
+  title: {
+    absolute: "",
+    default: "SkyHub",
+    template: "SkyHub | %s"
+  },
   description: "The land of the space",
 };
+
 
 export default function RootLayout({
   children,
@@ -20,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark">
-      <body className={`dark:bg-slate-900 dark:text-dark-text text-semidark bg-slate-200 bg-[linear-gradient(to_right,#DDD6FE_1px,transparent_1px),linear-gradient(to_bottom,#DDD6FE_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] ${poppins_init.variable}`}>{children}</body>
+      <body className={`dark:bg-slate-900 dark:text-dark-text text-semidark bg-slate-200 bg-[linear-gradient(to_right,#DDD6FE_1px,transparent_1px),linear-gradient(to_bottom,#DDD6FE_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:48px_48px] ${poppins_init.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
