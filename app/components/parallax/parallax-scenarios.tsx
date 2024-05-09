@@ -2,7 +2,6 @@
 import 'atropos/css';
 import Atropos from 'atropos';
 import { useEffect } from 'react';
-import { SiRocket } from 'react-icons/si';
 
 export const MoonlightScene = ():React.JSX.Element => {
     useEffect(() => {

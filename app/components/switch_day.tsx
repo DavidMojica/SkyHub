@@ -1,4 +1,3 @@
-'use client';
 import { useState } from 'react';
 import '../styles/switch_day.css';
 const Switch_day = ():React.JSX.Element => {
