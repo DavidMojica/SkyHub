@@ -15,7 +15,7 @@ import { useEffect } from "react";
 const getNasaPlanets = async ():Promise<void> =>{
     try{
        //API call
-       const response = await fetch(`https://images-api.nasa.gov/search?q=PIA00342`);
+       const response = await fetch(`https://images-api.nasa.gov/search?q=hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o`);
        const data = await response.json();
        //Implementacion propia
        console.log(data);

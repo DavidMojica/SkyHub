@@ -3,7 +3,7 @@
 import Header from "./components/header";
 import Footer from "./components/footer";
 import {MoonlightScene, ForestScene} from "./components/parallax/parallax-scenarios";
-import NASA_API from "./components/API/NASA_API";
+import {NASA_API} from "./components/API/NASA_API";
 import React, {useEffect} from "react";
 
 //-------Nasa API fetch: Astronomic Picture Of the Day--------//
