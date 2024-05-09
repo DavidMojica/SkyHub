@@ -3,7 +3,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Metadata } from "next";
-import NASA_API from "../components/API/NASA_API";
+import { NASA_API } from "../components/API/NASA_API";
 import { useEffect } from "react";
 
 //----------Metadata: establecer el título de la página y más (a futuro)------------//
