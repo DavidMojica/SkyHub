@@ -7,6 +7,9 @@ import { ENGLISH } from "@/app/components/utils/PLANETS_TO";
 import PlanetDetailTable from "@/app/components/tables";
 import { createRoot } from "react-dom/client";
 
+//--------Variables------//
+let planetaRenderizado = new Set();
+
 const Detalles = ({ params, }: { params: {planeta:string}; }) : React.JSX.Element =>{
     const getPlanetInformation = async ():Promise<void> =>{
         const table_container = document.getElementById('table_container');
@@ -14,19 +17,17 @@ const Detalles = ({ params, }: { params: {planeta:string}; }) : React.JSX.Elemen
             const response = await fetch(`${SYSTEME_SOLAIRE_API.CORPUS}${ENGLISH[params.planeta]}`);
             const data = await response.json();
 
-            
-            const table_around = document.createElement('section');
-            const table = <PlanetDetailTable planeta={params.planeta} afelio={data.aphelion} perihelio={data.perihelion} />
-            const root = createRoot(table_around);
-            root.render(table)
-            table_container?.appendChild(table_around);
-            
+            if (!planetaRenderizado.has(params.planeta)){
+                const table_around = document.createElement('section');
+                const table = <PlanetDetailTable planeta={params.planeta} afelio={data.aphelion} perihelio={data.perihelion} gravedad={data.gravity} tiempo_orbita={data.sideralOrbit} />
+                const root = createRoot(table_around);
+                root.render(table)
+                table_container?.appendChild(table_around);
+                planetaRenderizado.add(params.planeta);
+            }
             console.log(data);
-            
-            
         } catch (error){
             console.log(error);
-            
         }
     }
     useEffect(() =>{
