@@ -26,7 +26,7 @@ const Planetas = ():React.JSX.Element =>{
                 const href =  data.collection.items[0].links[0].href;
                 
                 if(!planetasRenderizados.has(planeta)){
-                    const galleryCardElement = <GalleryCard img_route={href} nombre={planeta} tipo={planeta} />;
+                    const galleryCardElement = <GalleryCard img_route={href} nombre={planeta} tipo={planeta} routeRef="planetas" idElement={planeta} />;
                     const cardContainer = document.createElement('section');
                     cardContainer.classList.add('gallery-card-container');
                     
