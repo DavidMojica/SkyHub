@@ -7,7 +7,6 @@ export const NASA_API:{
     APOD: 'https://api.nasa.gov/planetary/apod?api_key=',
     // ----------MARS-CURIOSITY-------------//
     MARS_CURIOSITY: 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=',
-    //-----------Exoplanetas---------------//
     //-----------Nasa image and video library----------//
     MEDIA_LIBRARY: "https://images-api.nasa.gov/search?q=",
     //----------No definido aun-------//
