@@ -19,7 +19,7 @@ const Detalles = ({ params, }: { params: {planeta:string}; }) : React.JSX.Elemen
 
             if (!planetaRenderizado.has(params.planeta)){
                 const table_around = document.createElement('section');
-                const table = <PlanetDetailTable planeta={params.planeta} afelio={data.aphelion} perihelio={data.perihelion} gravedad={data.gravity} tiempo_orbita={data.sideralOrbit} />
+                const table = <PlanetDetailTable planeta={params.planeta} afelio={data.aphelion} perihelio={data.perihelion} gravedad={data.gravity} tiempo_orbita={data.sideralOrbit} tiempo_rotacion={data.sideralRotation} densidad={data.density} temperatura={data.avgTemp} escape={data.escape} radio_ecuatorial={data.equaRadius} radio_polar={data.polarRadius} radio_medio={data.meanRadius} masa={data.mass} descubierto_fecha={data.discoveryDate} descubierto_por={data.discoveredBy} lunas={data.moons} />
                 const root = createRoot(table_around);
                 root.render(table)
                 table_container?.appendChild(table_around);

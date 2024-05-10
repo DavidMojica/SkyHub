@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita, tiempo_rotacion, densidad, temperatura, escape, radio_ecuatorial, radio_polar, radio_medio, masa, descubierto_fecha, descubierto_por, lunas}: 
-    {planeta:string, afelio:number, perihelio:number, gravedad:number, tiempo_orbita:number, tiempo_rotacion:number, densidad:number, temperatura:number, escape:number, radio_ecuatorial:number, radio_polar:number, radio_medio:number, masa:number, descubierto_fecha:string, descubierto_por:string, lunas:string[]}):React.JSX.Element => {
+    {planeta:string, afelio:number, perihelio:number, gravedad:number, tiempo_orbita:number, tiempo_rotacion:number, densidad:number, temperatura:number, escape:number, radio_ecuatorial:number, radio_polar:number, radio_medio:number, masa:{[key:string]:number}, descubierto_fecha:string, descubierto_por:string, lunas:string[]}):React.JSX.Element => {
   return (
     <section className="relative overflow-x-auto">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -31,8 +31,8 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
                         Tiempo
                     </td>
                     <td className="px-6 py-4">
-                        {(Math.round(tiempo_rotacion)/24).toFixed(2)} Días
-                        {Math.round(tiempo_rotacion).toFixed(0)} Días <br />
+                        {(Math.round(tiempo_rotacion)/24).toFixed(2)} Días <br />
+                        {Math.round(tiempo_rotacion).toFixed(0)} Horas
                     </td>
                     <td className="px-6 py-4">
                         El periodo de rotación es el tiempo que un cuerpo tarda en dar una vuelta sobre sí mismo. Esto es lo que llamamos ciclo día/noche.
@@ -123,7 +123,7 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
                         g/Cm<sup>3</sup>
                     </td>
                     <td className="px-6 py-4">
-                        {densidad.toFixed(2)} Metros / Seg
+                        {densidad.toFixed(2)} g/Cm<sup>3</sup>
                     </td>
                     <td className="px-6 py-4">
                     La densidad de un planeta se define como la relación entre su masa y el volumen que ocupa.
@@ -141,7 +141,7 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
                         Grados centígrados
                     </td>
                     <td className="px-6 py-4">
-                        {temperatura+273} C°
+                        {temperatura-273} C°
                     </td>
                     <td className="px-6 py-4">
                         El promedio de la temperatura de la atmósfera del planeta, normalmente en su nivel más superficial
@@ -159,7 +159,7 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
                         Kilómetros por segundo
                     </td>
                     <td className="px-6 py-4">
-                        {escape.toFixed(2)} Km/s
+                        {escape} Km/s
                     </td>
                     <td className="px-6 py-4">
                         La velocidad de escape de un planeta es la velocidad mínima que un objeto necesita alcanzar para escapar completamente de la influencia gravitatoria del planeta y llegar al espacio abierto.
@@ -179,16 +179,64 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
                     <td className="px-6 py-4">
                         Radio ecuatorial: {radio_ecuatorial.toFixed(0)} Kms <br />
                         Radio polar: {radio_polar.toFixed(0)} Kms <br />
-                        Radio medio: {radio_medio.toFixed(0)}
+                        Radio medio: {radio_medio.toFixed(0)} Kms
                     </td>
                     <td className="px-6 py-4">
-                    Se toma una regla desde el centro del planeta y se mide la distancia hacia el borde del mismo. Esa distancia se llama Radio.
+                        Se toma una regla desde el centro del planeta y se mide la distancia hacia el borde del mismo. Esa distancia se llama Radio.
                         <blockquote>
-                            <small>Gravedad de la tierra: 9.8 Metros / Seg</small>
+                            <small>Radio de la tierra: 6.378Km</small>
                         </blockquote>
                     </td>
                 </tr>
-                
+                {/* Masa */}
+                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Masa
+                    </th>
+                    <td className="px-6 py-4">
+                        Toneladas
+                    </td>
+                    <td className="px-6 py-4">
+                        {`${masa['massValue'].toFixed(3)}`}x 10<sup>{`${masa['massExponent']}`}</sup> Tons
+                    </td>
+                    <td className="px-6 py-4">
+                        Peso del objeto.
+                        <blockquote>
+                            <small>Masa de la tierra: 5.972 x10<sup>24</sup> toneladas</small>
+                        </blockquote>
+                    </td>
+                </tr>
+                {/* Descubrimiento */}
+                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Descubrimiento
+                    </th>
+                    <td className="px-6 py-4">
+                        Persona - Fecha
+                    </td>
+                    <td className="px-6 py-4">
+                        Descubierto por: {descubierto_por} <br />
+                        Fecha descubrimiento: {descubierto_fecha}
+                    </td>
+                    <td className="px-6 py-4">
+                        Fecha y actor del descubrimiento del planeta.
+                    </td>
+                </tr>
+                {/* Lunas */}
+                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        Número de lunas
+                    </th>
+                    <td className="px-6 py-4">
+
+                    </td>
+                    <td className="px-6 py-4">
+                        {lunas?.length||0} luna(s)
+                    </td>
+                    <td className="px-6 py-4">
+                        Cantidad de satélites naturales del objeto
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>

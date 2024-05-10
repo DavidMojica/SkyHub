@@ -5,7 +5,7 @@ export const ENGLISH:{
     venus:'venus',
     tierra:'earth',
     marte:'mars',
-    jupiter:'jupyter',
+    jupiter:'jupiter',
     saturno:'saturn',
     urano:'uranus',
     neptuno:'neptune',
