@@ -7,7 +7,7 @@ const Header = ():React.JSX.Element =>{
     return(
         <header className={'font-poppins flex flex-col sm:flex-row sm:justify-evenly py-2 items-center '}>
             <section className="flex items-center">
-                <Link href={'/'}><img src="./logo.png" alt="" className="w-40 rounded-full" /></Link>
+                <Link href={'/'}><img src="/logo.png" alt="" className="w-40 rounded-full" /></Link>
                 <aside className="flex flex-col sm:hidden ml-6 items-center">
                     <a href="https://github.com/DavidMojica/SkyHub" target="_BLANK" className="mb-4 text-sky-700 dark:text-purple-800 ml-2"><FaGithub className="w-10 h-10 transition-all scale-125 hover:scale-150" /></a>
                     <Switch_day />
