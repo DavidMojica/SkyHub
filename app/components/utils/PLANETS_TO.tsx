@@ -1,3 +1,7 @@
+/**
+ * Traducciones desde el español a otros idiomas, necesario para poder
+ * hacer consultas a algunas API.
+ * */ 
 export const ENGLISH:{
     [key:string]:string
 } = {

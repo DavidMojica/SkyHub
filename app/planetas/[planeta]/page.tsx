@@ -4,7 +4,7 @@ import Footer from "@/app/components/footer";
 import { useEffect } from "react";
 import { SYSTEME_SOLAIRE_API } from "@/app/components/API/SYSTEME_SOLAIRE_API";
 import { ENGLISH } from "@/app/components/utils/PLANETS_TO";
-import PlanetDetailTable from "@/app/components/tables";
+import {PlanetDetailTable} from "@/app/components/tables";
 import { createRoot } from "react-dom/client";
 
 //--------Variables------//

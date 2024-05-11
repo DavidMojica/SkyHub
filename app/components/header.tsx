@@ -15,7 +15,7 @@ const Header = ():React.JSX.Element =>{
             </section>
             <ul className="my-6 md:my-0 flex flex-col lg:flex-row text-center">
                 <li className="mx-3.5"><Link href={'/planetas'} className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Planetas</Link></li>
-                <li className="mx-3.5"><Link href={'/exoplanetas'} className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Exoplanetas</Link></li>
+                <li className="mx-3.5"><Link href={'/personas_espacio'} className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Personas en el espacio</Link></li>
                 <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Estrellas</a></li>
                 <li className="mx-3.5"><a href="#" className="font-bold text-2xl text-sky-700 dark:text-purple-800 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:text-3xl hover:decoration-violet-700 dark:hover:decoration-sky-500">Gráficos</a></li>
             </ul>
