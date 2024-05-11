@@ -1,6 +1,54 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita, tiempo_rotacion, densidad, temperatura, escape, radio_ecuatorial, radio_polar, radio_medio, masa, descubierto_fecha, descubierto_por, lunas}: 
+export const PeopleInTheSpaceTable = ({ people }: { people: { name: string; craft: string }[] }): React.JSX.Element => {
+    const placePeople = async (): Promise<void> => {
+        const tbody = document.getElementById('tbody');
+
+        if (tbody) {
+            tbody.innerHTML = '';
+            for (const person of people) {
+                tbody.innerHTML += `
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            ${person.name}
+                        </th>
+                        <td class="px-6 py-4">
+                            ${person.craft}
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+    }
+
+     useEffect(() => {
+        placePeople();
+    }, []);
+
+    return (
+        <>
+            <section className="relative overflow-x-auto">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" className="px-6 py-3">
+                                Nombre
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Nave o misión
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id='tbody'>
+
+                    </tbody>
+                </table>
+            </section>
+        </>
+    )
+}
+
+export const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita, tiempo_rotacion, densidad, temperatura, escape, radio_ecuatorial, radio_polar, radio_medio, masa, descubierto_fecha, descubierto_por, lunas}: 
     {planeta:string, afelio:number, perihelio:number, gravedad:number, tiempo_orbita:number, tiempo_rotacion:number, densidad:number, temperatura:number, escape:number, radio_ecuatorial:number, radio_polar:number, radio_medio:number, masa:{[key:string]:number}, descubierto_fecha:string, descubierto_por:string, lunas:string[]}):React.JSX.Element => {
   return (
     <section className="relative overflow-x-auto">
@@ -243,4 +291,3 @@ const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita,
   )
 }
 
-export default PlanetDetailTable
