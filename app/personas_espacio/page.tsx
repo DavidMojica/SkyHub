@@ -4,15 +4,8 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { PEOPLE_IN_THE_SPACE } from "../components/API/PEOPLE_IN_SPACE";
 import { PeopleInTheSpaceTable } from "../components/tables";
-import { useEffect } from "react";
-import { createRoot } from "react-dom/client";
+import { fetchData } from "../components/utils/DATA_FETCHER";
 //----------------Construcción página exoplanetas------------------//
-
-const fetchData = async (url:string):Promise<any> =>{
-    const data = await fetch(url)
-    return data.json();
-}
-
 const PeopleInTheSpacePage =  async () =>{
     const data = await fetchData(PEOPLE_IN_THE_SPACE.QUERY)
     return (
