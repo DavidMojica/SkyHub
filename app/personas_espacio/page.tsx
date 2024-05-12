@@ -1,13 +1,12 @@
-'use client';
 //----------------Imports---------------//
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { PEOPLE_IN_THE_SPACE } from "../components/API/PEOPLE_IN_SPACE";
 import { PeopleInTheSpaceTable } from "../components/tables";
-import { fetchData } from "../components/utils/DATA_FETCHER";
+import Utils from "../components/utils";
 //----------------Construcción página exoplanetas------------------//
 const PeopleInTheSpacePage =  async () =>{
-    const data = await fetchData(PEOPLE_IN_THE_SPACE.QUERY)
+    const data = await Utils.DataFetcher(PEOPLE_IN_THE_SPACE.QUERY);
     return (
         <>
             <Header />

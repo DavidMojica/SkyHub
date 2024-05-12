@@ -51,5 +51,39 @@ export const IMAGENES_NASA_PLANETAS: {
     pluton:[
         'PIA19873',
         'PIA19708',
+    ],
+    eris:[
+        'PIA17307',
+        'PIA03034'
+    ],
+    sedna:[
+        'PIA05566',
+        'PIA05569'
+    ],
+    makemake: [
+        'PIA08398'
+    ],
+    haumea: [
+        'GSFC_20171208_Archive_e001308'
     ]
+}
+
+export const  IMAGENES_NASA_ASTEROIDES: {
+    [key:string]:string
+} = {
+    ceres:'PIA21906',
+    halley:'ARC-1986-AC86-0720-4',
+    vesta: 'PIA14894',
+    hebe:'PIA24471',
+    ida: 'PIA00136',
+    lempo: 'PIA24561',
+    eros:'PIA19379', 
+    toutatis: 'PIA16599',
+    quaoar: 'PIA19647',
+    steins: 'PIA23554',
+    astree: 'PIA15776',
+    pholus: 'PIA22970',
+    castalia: 'PIA02494',
+    hector: 'PIA15019',
+    cruithne:'PIA14736',
 }
