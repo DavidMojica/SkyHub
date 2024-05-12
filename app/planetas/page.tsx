@@ -22,7 +22,7 @@ const Planetas = ():React.JSX.Element =>{
             try {
                 const response = await fetch(`${NASA_API.MEDIA_LIBRARY}${img_nasa_id}`);
                 const data = await response.json();
-                const href =  data.collection.items[0].links[0].href;            
+                const href = data.collection.items[0].links[0].href;            
                 if(!planetasRenderizados.has(planeta)){
                     const galleryCardElement = <GalleryCard img_route={href} nombre={planeta} tipo={planeta} routeRef="planetas" idElement={planeta} />;
                     const cardContainer = document.createElement('section');

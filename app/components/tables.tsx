@@ -51,7 +51,10 @@ export const PeopleInTheSpaceTable = ({ people }: { people: { name: string; craf
 
 export const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_orbita, tiempo_rotacion, densidad, temperatura, escape, radio_ecuatorial, radio_polar, radio_medio, masa, descubierto_fecha, descubierto_por, lunas}: 
     {planeta:string, afelio:number, perihelio:number, gravedad:number, tiempo_orbita:number, tiempo_rotacion:number, densidad:number, temperatura:number, escape:number, radio_ecuatorial:number, radio_polar:number, radio_medio:number, masa:{[key:string]:number}, descubierto_fecha:string, descubierto_por:string, lunas:string[]}):React.JSX.Element => {
-  return (
+  
+    const masaValue = masa && masa.massValue ? masa.massValue.toFixed(3) : 0;
+    const masaExponente = masa && masa.massExponent ? masa.massExponent : 0;
+    return (
     <section className="relative overflow-x-auto">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -246,7 +249,7 @@ export const PlanetDetailTable = ({planeta, afelio, perihelio, gravedad, tiempo_
                         Toneladas
                     </td>
                     <td className="px-6 py-4">
-                        {`${masa['massValue'].toFixed(3)}`}x 10<sup>{`${masa['massExponent']}`}</sup> Tons
+                        {`${masaValue}`}x 10<sup>{`${masaExponente}`}</sup> Tons
                     </td>
                     <td className="px-6 py-4">
                         Peso del objeto.
