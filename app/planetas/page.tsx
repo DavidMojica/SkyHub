@@ -5,7 +5,7 @@ import GalleryCard from "../components/cards_gallery"
 import { NASA_API, IMAGENES_NASA_PLANETAS } from "../components/API/NASA_API";
 import { createRoot } from "react-dom/client";
 import { useEffect } from "react";
-
+import RainbowTitle from "../components/rainbow_title";
 //--------Variables------//
 const imgs_planetas_seleccionadas: { [key: string]: string } = {};
 let planetasRenderizados = new Set();
@@ -44,7 +44,7 @@ const Planetas = ():React.JSX.Element =>{
         <>
             <Header />
             <section className="flex flex-col justify-center">
-                <h2 className="font-poppins font-bold text-6xl lg:text-8xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-sky-500 dark:from-pink-500 to-purple-800 dark:to-purple-800 shadow-around">Planetas</h2>
+                <RainbowTitle text="Planetas" />
                 <h4 className="font-poppins w-1/3 text-center mx-auto text-3xl text-gray-900 dark:text-white">Puedes dar click en algún planeta para observar sus detalles y características.</h4>
             </section>
             <main>

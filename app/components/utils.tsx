@@ -25,6 +25,10 @@ class Utils{
                     urano:'uranus',
                     neptuno:'neptune',
                     pluton:'pluto',
+                    eris:'eris',
+                    sedna:'sedna',
+                    makemake:'makemake',
+                    haumea:'haumea'
                 }
             }
             default:

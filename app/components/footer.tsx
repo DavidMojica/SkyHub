@@ -11,6 +11,7 @@ const Footer = ():React.JSX.Element => {
                     <h4 className="text-xl">Explora nuestro sitio</h4>
                     <ul className="">
                         <li className="mx-3.5"><Link href={'/planetas'} className="font-bold text-lg text-slate-200 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:decoration-violet-700 dark:hover:decoration-sky-500">Planetas</Link></li>
+                        <li className="mx-3.5"><Link href={'/asteroides'} className="font-bold text-lg text-slate-200 transition-all hover:underline dark:hover:text-purple-600 hover:text-sky-500 hover:transform hover:decoration-violet-700 dark:hover:decoration-sky-500">Asteroides</Link></li>
 
                     </ul>
                 </section>
