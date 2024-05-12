@@ -5,7 +5,6 @@ import GalleryCard from "../components/cards_gallery"
 import { NASA_API, IMAGENES_NASA_PLANETAS } from "../components/API/NASA_API";
 import { createRoot } from "react-dom/client";
 import { useEffect } from "react";
-
 //--------Variables------//
 const imgs_planetas_seleccionadas: { [key: string]: string } = {};
 let planetasRenderizados = new Set();

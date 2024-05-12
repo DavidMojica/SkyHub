@@ -2,12 +2,13 @@
 import Header from "@/app/components/header";
 import Footer from "@/app/components/footer";
 import { SYSTEME_SOLAIRE_API } from "@/app/components/API/SYSTEME_SOLAIRE_API";
-import { ENGLISH } from "@/app/components/utils/PLANETS_TO";
+import Utils from "@/app/components/utils";
 import {PlanetDetailTable} from "@/app/components/tables";
-import { fetchData } from "@/app/components/utils/DATA_FETCHER";
 //--------Variables------//
 const Detalles = async ({ params, }: { params: {planeta:string}; }) =>{
-    const data = await fetchData(`${SYSTEME_SOLAIRE_API.CORPUS}${ENGLISH[params.planeta]}`);
+    const utils = new Utils();
+    const EnglishKeywords = utils.KeywordTranslator('en');
+    const data = await Utils.DataFetcher(`${SYSTEME_SOLAIRE_API.CORPUS}${EnglishKeywords[params.planeta]}`);
     return (
         <>
             <Header />
