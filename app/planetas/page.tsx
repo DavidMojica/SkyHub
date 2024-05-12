@@ -5,6 +5,7 @@ import GalleryCard from "../components/cards_gallery"
 import { NASA_API, IMAGENES_NASA_PLANETAS } from "../components/API/NASA_API";
 import { createRoot } from "react-dom/client";
 import { useEffect } from "react";
+
 //--------Variables------//
 const imgs_planetas_seleccionadas: { [key: string]: string } = {};
 let planetasRenderizados = new Set();
@@ -16,19 +17,16 @@ const Planetas = ():React.JSX.Element =>{
             const imagenAleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
             imgs_planetas_seleccionadas[planeta] = imagenAleatoria;
         }
-
         const planet_cards_container = document.getElementById('planet_cards_container');
         for (const [planeta, img_nasa_id] of Object.entries(imgs_planetas_seleccionadas)) {
             try {
                 const response = await fetch(`${NASA_API.MEDIA_LIBRARY}${img_nasa_id}`);
                 const data = await response.json();
-                const href =  data.collection.items[0].links[0].href;
-                
+                const href =  data.collection.items[0].links[0].href;            
                 if(!planetasRenderizados.has(planeta)){
                     const galleryCardElement = <GalleryCard img_route={href} nombre={planeta} tipo={planeta} routeRef="planetas" idElement={planeta} />;
                     const cardContainer = document.createElement('section');
                     cardContainer.classList.add('gallery-card-container');
-                    
                     const root = createRoot(cardContainer);
                     root.render(galleryCardElement);
                     planet_cards_container?.appendChild(cardContainer);

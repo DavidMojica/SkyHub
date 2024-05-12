@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect } from 'react'
 
 export const PeopleInTheSpaceTable = ({ people }: { people: { name: string; craft: string }[] }): React.JSX.Element => {

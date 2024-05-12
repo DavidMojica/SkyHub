@@ -1,6 +1,5 @@
 class Utils{
     constructor(){}
-
     /**
      * @param url 
      * @returns json;
@@ -9,7 +8,6 @@ class Utils{
         const data = await fetch(url);
         return data.json();
     }
-
     /**
      * @param lang 
      * @returns [key:string]:string
@@ -32,6 +30,15 @@ class Utils{
             default:
                 return {}
         }
+    }
+
+    public async SelectRandomImagesFromObject(obj:{[key:string]:string[]}): Promise<{[key:string]:string}>{
+        const selected_images: {[key: string]: string} = {};
+        for (const element of Object.keys(obj)) {
+            const imgs_element = obj[element];
+            selected_images[element] = imgs_element[Math.floor(Math.random() * imgs_element.length)];
+        }
+        return selected_images;
     }
 }
 
