@@ -17,10 +17,10 @@ const Dashboard = () => {
           <article className="w-1/2 m-auto">
             <PlanetsTemperatureChart />
           </article>
-          <article clasName="w-1/2 m-auto">
+          <article className="w-1/2 m-auto">
             <PlanetsRadiusChart />
           </article>
-          <article clasName="w-1/2 m-auto">
+          <article className="w-1/2 m-auto">
             <PlanetsMoonsChart />
           </article>
 

@@ -35,11 +35,10 @@ const PlanetsTemperatureChart = ():React.JSX.Element => {
                     type: 'value'
                 },
                 series: [{
-                    data: {
-                        value: planetsData.map(planeta => planeta.avgTemp - 273), // Kelvin to Celsius
-                    },
-                    type: 'bar'
-                }]
+                        data: planetsData.map(planeta => planeta.avgTemp - 273), // Kelvin to Celsius
+                        type: 'bar'
+                    }
+                ]
             };
 
             setChartData(chartOptions);
