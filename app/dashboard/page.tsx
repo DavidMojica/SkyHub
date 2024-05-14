@@ -2,7 +2,7 @@
 import Footer from "../components/footer"
 import Header from "../components/header"
 import RainbowTitle from "../components/rainbow_title"
-import {PlanetsTemperatureChart} from "../components/charts/planets_temperature_chart";
+import PlanetsTemperatureChart from "../components/charts/planets_temperature_chart";
 
 const Dashboard = () => {
 
