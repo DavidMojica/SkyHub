@@ -9,9 +9,10 @@ const PlanetsTemperatureChart = ():React.JSX.Element => {
     useEffect(() => {
         const fetchData = async ():Promise<void> => {
             const planetsData = [];
-            const planetas = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
+            const planetas_EN = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto'] as const;
+            const planetas_ES = ['Mercurio', 'Venus', 'Tierra', 'Marte', 'Jupiter', 'Saturno', 'Urano', 'Neptuno', 'Pluton'] as const;
 
-            for (const planeta of planetas) {
+            for (const planeta of planetas_EN) {
                 const data = await Utils.DataFetcher(`${SYSTEME_SOLAIRE_API.CORPUS}${planeta}`);
                 planetsData.push(data);
             }
@@ -28,13 +29,15 @@ const PlanetsTemperatureChart = ():React.JSX.Element => {
                 },
                 xAxis: {
                     type: 'category',
-                    data: planetas
+                    data: planetas_ES
                 },
                 yAxis: {
                     type: 'value'
                 },
                 series: [{
-                    data: planetsData.map(planeta => planeta.avgTemp - 273), // Kelvin to Celsius
+                    data: {
+                        value: planetsData.map(planeta => planeta.avgTemp - 273), // Kelvin to Celsius
+                    },
                     type: 'bar'
                 }]
             };
