@@ -5,6 +5,7 @@ import RainbowTitle from "../components/rainbow_title"
 import PlanetsTemperatureChart from "../components/charts/planets_temperature_chart";
 import PlanetsRadiusChart from "../components/charts/planets_radius_chart";
 import PlanetsMoonsChart from "../components/charts/planets_moons_chart";
+import PlanetsGravityChart from "../components/charts/planets_gravity_chart";
 const Dashboard = () => {
 
   return (
@@ -22,6 +23,9 @@ const Dashboard = () => {
           </article>
           <article className="w-1/2 m-auto">
             <PlanetsMoonsChart />
+          </article>
+          <article className="w-1/2 m-auto">
+            <PlanetsGravityChart />
           </article>
 
 
