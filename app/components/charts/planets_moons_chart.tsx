@@ -1,8 +1,4 @@
-import { useState, useEffect } from 'react';
-import Utils from "../utils";
-import { SYSTEME_SOLAIRE_API } from "../API/SYSTEME_SOLAIRE_API";
 import EChartsReact from "echarts-for-react";
-
 const PlanetsMoonsChart = ():React.JSX.Element => {
   
       const chartOptions: any = {
@@ -11,6 +7,7 @@ const PlanetsMoonsChart = ():React.JSX.Element => {
             },
         series: [
             {
+              name: 'Satélites naturales del planeta',
             type: 'gauge',
             anchor: {
                 show: true,
@@ -147,7 +144,7 @@ const PlanetsMoonsChart = ():React.JSX.Element => {
         <section>
           <EChartsReact
               option={chartOptions}
-              style={{ height: '400px' }}
+              style={{ height: '600px' }}
           />
         </section>
     );
