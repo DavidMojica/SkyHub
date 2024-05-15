@@ -21,6 +21,7 @@ const PlanetsGravityChart = ():React.JSX.Element => {
         },
         tooltip: {},
         series: {
+            name: 'Gravedad del planeta',
           type: 'bar',
           data: [
             3.7
@@ -46,7 +47,7 @@ const PlanetsGravityChart = ():React.JSX.Element => {
         <section>
           <EChartsReact
               option={chartOptions}
-              style={{ height: '400px' }}
+              style={{ height: '600px' }}
           />
         </section>
     );

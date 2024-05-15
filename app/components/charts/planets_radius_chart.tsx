@@ -18,6 +18,11 @@ const PlanetsRadiusChart = ():React.JSX.Element => {
             }
 
             const chartOptions: any = {
+              title: [
+                {
+                  text: 'Comparativo de planetas por su radio'
+                }
+              ],
                 tooltip: {
                   trigger: 'item'
                 },
@@ -27,7 +32,7 @@ const PlanetsRadiusChart = ():React.JSX.Element => {
                 },
                 series: [
                   {
-                    name: 'Comparativo de planetas por su radio',
+                    name: 'Radio medio del planeta',
                     type: 'pie',
                     radius: ['40%', '70%'],
                     avoidLabelOverlap: false,
@@ -65,8 +70,8 @@ const PlanetsRadiusChart = ():React.JSX.Element => {
         <section>
             {chartData && (
                 <EChartsReact
-                    option={chartData} //Probar con chart options
-                    style={{ height: '400px' }}
+                    option={chartData} 
+                    style={{ height: '600px' }}
                 />
             )}
         </section>

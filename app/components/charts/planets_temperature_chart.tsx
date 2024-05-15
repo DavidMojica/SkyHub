@@ -35,6 +35,7 @@ const PlanetsTemperatureChart = ():React.JSX.Element => {
                     type: 'value'
                 },
                 series: [{
+                        name: 'Temperatura media del planeta',
                         data: planetsData.map(planeta => planeta.avgTemp - 273), // Kelvin to Celsius
                         type: 'bar'
                     }
@@ -52,7 +53,7 @@ const PlanetsTemperatureChart = ():React.JSX.Element => {
             {chartData && (
                 <EChartsReact
                     option={chartData}
-                    style={{ height: '400px' }}
+                    style={{ height: '600px' }}
                 />
             )}
         </section>
