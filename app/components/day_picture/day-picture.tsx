@@ -11,7 +11,7 @@ interface dayPictureInterface {
 export const PictureOfTheDay = (props: dayPictureInterface): React.JSX.Element => {
 
     return (
-        <main className="font-poppins flex justify-center py-8">
+        <main className="font-poppins flex justify-center py-8b bg-white dark:bg-slate-900">
             <article className="container">
                 <h1 className="text-6xl">NASA's Astronomy Picture of the Day</h1>
                 <h2 className="text-xl">{props.title}</h2>
