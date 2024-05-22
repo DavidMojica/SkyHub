@@ -16,6 +16,7 @@ const Home = async ():Promise<React.JSX.Element> => {
   //-------Nasa API fetch: Astronomic Picture Of the Day--------//
   const data = await Utils.DataFetcher(`${NASA_API.APOD}${NASA_API.KEY}`);
   const media_element = data.media_type === 'video' ? `<iframe src="${data.url}"></iframe>` : `<img src="${data.url}" />`;
+  const isVideo = data.media_type === 'video' ? true : false;
   return (
     //-------Tags html van aquí:---------//
     <>
@@ -25,17 +26,13 @@ const Home = async ():Promise<React.JSX.Element> => {
           </section>
           <MoonlightScene />
           <ForestScene />
-          <PictureOfTheDay />
-          <main className="container font-poppins">
-            <h1>NASA's Astronomy Picture of the Day</h1>
-            <h2>{data.title}</h2>
-            <p id="date">{data.date}</p>
-            <section className="picture-explanation-container">
-              <section id="media_container" dangerouslySetInnerHTML={{__html: media_element}}>
-              </section>
-              <p>{data.explanation}</p>
-            </section>
-          </main>
+          <PictureOfTheDay 
+          title={data.title}
+          date={data.date}
+          media_element={media_element}
+          explanation={data.explanation}
+          isVideo={isVideo}
+          />
         <Footer />
     </>
   );
