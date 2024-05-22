@@ -15,7 +15,7 @@ import { PictureOfTheDay } from "./day_picture/page";
 const Home = async ():Promise<React.JSX.Element> => {
   //-------Nasa API fetch: Astronomic Picture Of the Day--------//
   const data = await Utils.DataFetcher(`${NASA_API.APOD}${NASA_API.KEY}`);
-  const media_element = data.media_type === 'video' ? `<iframe src="${data.url}"></iframe>` : `<img src="${data.url}" />`;
+  const media_element = data.media_type === 'video' ? `<iframe src="${data.url}"></iframe>` : data.url;
   const isVideo = data.media_type === 'video' ? true : false;
   return (
     //-------Tags html van aquí:---------//
