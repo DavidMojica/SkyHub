@@ -5,6 +5,7 @@ import {MoonlightScene, ForestScene} from "./components/parallax/parallax-scenar
 import {NASA_API} from "./components/API/NASA_API";
 import Utils from "./components/utils";
 import RainbowTitle from "./components/rainbow_title";
+import { PictureOfTheDay } from "./day_picture/page";
 
 //----------------Construcción página home------------------//
 /**
@@ -24,6 +25,7 @@ const Home = async ():Promise<React.JSX.Element> => {
           </section>
           <MoonlightScene />
           <ForestScene />
+          <PictureOfTheDay />
           <main className="container font-poppins">
             <h1>NASA's Astronomy Picture of the Day</h1>
             <h2>{data.title}</h2>
