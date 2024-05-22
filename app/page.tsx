@@ -5,7 +5,7 @@ import {MoonlightScene, ForestScene} from "./components/parallax/parallax-scenar
 import {NASA_API} from "./components/API/NASA_API";
 import Utils from "./components/utils";
 import RainbowTitle from "./components/rainbow_title";
-import { PictureOfTheDay } from "./day_picture/page";
+import { PictureOfTheDay } from "./components/day_picture/day-picture";
 
 //----------------Construcción página home------------------//
 /**
