@@ -35,6 +35,9 @@ const Asteroides = () => {
             <Header />
                 <section className="flex flex-col justify-center">
                     <RainbowTitle text="Asteroides" />
+                    <h4 className="font-poppins w-1/3 text-center mx-auto text-3xl text-gray-901 dark:text-white">
+                        Puedes dar click en algún asteroide para observar sus detalles y características.
+                    </h4>
                 </section>
                 <main>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 65">
