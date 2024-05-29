@@ -26,7 +26,13 @@ export const PictureOfTheDay = (props: dayPictureInterface): React.JSX.Element =
                     props.isVideo
                         ?
                         <section className="picture-explanation-container">
-                            <article id="media_container" dangerouslySetInnerHTML={{ __html: props.media_element }}></article>
+                            <article 
+                                id="media_container" 
+                                style={{ height: '400px' }}
+                                className="flex justify-center"
+                                dangerouslySetInnerHTML={{ __html: props.media_element }}
+                            >
+                            </article>
                             <p className="font-medium text-xl text-justify leading-8 text-black dark:text-slate-100 transition-all">
                                 {props.explanation}
                             </p>
